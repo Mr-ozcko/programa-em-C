@@ -1,0 +1,194 @@
+// Exercicio 01
+
+#include <stdio.h>
+int main() {
+    int num;
+    
+    printf("Digite um numero para ver se é par ou impar: \n");
+    scanf("%d", &num);
+    
+    if (num % 2 == 0) {
+        printf("O numero %d e par", num);
+    } else {
+        printf("O numero %d e impar", num);
+    }
+
+    return 0;
+}
+
+// Exercicio 02
+
+#include <stdio.h>
+int main() {
+    int num, sum , i;
+    printf("Digite um numero para ver a soma dos N numeros a partir de 1: \n");
+    scanf("%d", &num);
+
+    for(i=0;i<=num;i++){
+        printf("%d \n", i);
+        sum += i;
+    }
+    printf("A soma dos %d primeiros numeros e: %d", num, sum);
+    return 0;
+}
+
+// Exercicio 03
+
+#include <stdio.h>
+int main() {
+    float num;
+    
+    printf("Digite um valor em Celsius para converter em Fahrenheit: \n");
+    scanf("%f", &num);
+    
+    num = (num*1.8)+32;
+    
+    printf("O valor e %.1f Fahrenheit", num);
+    return 0;
+}
+
+// Exercicio 04
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int primo(int num) {
+    if (num <= 1) {
+        return false;
+    }
+
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro positivo: ");
+    scanf("%d", &numero);
+
+    if (primo(numero)) {
+        printf("%d é um número primo.\n", numero);
+    } else {
+        printf("%d não é um número primo.\n", numero);
+    }
+
+    return 0;
+}
+
+// Exercicio 05
+
+#include <stdio.h>
+int main() {
+    float ladoA, ladoB, ladoC;
+    
+    printf("Digite o comprimento dos tres lados de um triangulo \n");
+    scanf("%f %f %f", &ladoA, &ladoB, &ladoC);
+    
+    if (ladoA == ladoB && ladoA== ladoC){
+        printf("O triangulo e: Equilatero");
+    } else{
+        if (ladoA == ladoB || ladoA == ladoC || ladoB == ladoC){
+            printf("O triangulo e: Isoceles");
+        } else{
+            printf("O triangulo e: Escaleno");
+        }
+    }
+    return 0;
+}
+
+// Exercicio 06
+
+#include <stdio.h>
+int main() {
+    int matriz[3][3];
+    int i;
+
+    printf("Vamos montar uma matriz 3x3\n");
+    printf("Digite 3 valores para a primeira linha>\n");
+    scanf("%d %d %d", &matriz[0][0], &matriz[0][1], &matriz[0][2]);
+    
+    printf("Digite os tres valores da segunda linha:\n");
+    scanf("%d %d %d", &matriz[1][0], &matriz[1][1], &matriz[1][2]);
+    
+    printf("Para finalizar digite os tres numeros da terceira linha:\n");
+    scanf("%d %d %d", &matriz[2][0], &matriz[2][1], &matriz[2][2]);
+    
+    for(i=0; i<3; i++) {
+        printf("%d %d %d \n", matriz[i][0], matriz[i][1], matriz[i][2]);
+    }
+}
+
+// Exercicio 07
+
+#include <stdio.h>
+int main() {
+    int vetor[5];
+    
+    printf("Digite 5 valores inteiros \n");
+    scanf("%d %d %d %d %d", &vetor[0], &vetor[1], &vetor[2], &vetor[3], &vetor[4]);
+    
+    printf("A ordem inversa dos numeros digitados e: \n");
+    for(int i = 4;i>=0;i--){
+        printf("%d \t", vetor[i]);
+    }
+}
+
+// Exercicio 08
+
+#include <stdio.h>
+int main() {
+        int matriz [5] [5] ={
+        {1, 2, 3, 4, 5},
+        {5, 4, 3, 2, 1},
+        {6, 8, 6, 6, 6},
+        {5, 6, 3, 2, 1},
+        {8, 9, 7, 0,9}};
+    
+    printf("A segunda linha da matriz e: \n");
+    for(int i = 0; i<5 ; i++){
+        printf("%d \t", matriz[1][i]);
+    }
+}
+
+// Exercicio 09
+
+#include <stdio.h>
+int main() {
+        int matriz [5] [5] ={
+        {1, 2, 3, 4, 5},
+        {5, 4, 3, 2, 1},
+        {6, 8, 6, 6, 6},
+        {5, 6, 3, 2, 1},
+        {8, 9, 7, 0,9}};
+    
+    printf("A segunda linha da matriz e: \n");
+    for(int i = 0; i<5 ; i++){
+        printf("%d \t", matriz[i][0]);
+    }
+}
+
+// Exercicio 10
+
+#include <stdio.h>
+int main() {
+        int matriz [5] [5] ={
+        {1, 2, 3, 4, 5},
+        {5, 4, 3, 2, 1},
+        {6, 8, 6, 6, 6},
+        {5, 6, 3, 2, 1},
+        {8, 9, 7, 0,9}};
+        int a;
+    
+        for(int i = 0; i<5 ; i++){
+            for(int j = 0; j<5; j++){
+                a += matriz[i][j];
+            }
+    }
+    printf("A soma dos valores da matriz e: %d", a);
+}
